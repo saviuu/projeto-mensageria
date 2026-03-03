@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+infra/pgdata/
+**/node_modules/
+**/dist/
+.env
