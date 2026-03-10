@@ -39,4 +39,13 @@ public class RelatoriosController : ControllerBase
             relatorio.Id 
         });
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> ObterStatusRelatorio(Guid id)
+    {
+       var relatorio = await _context.Relatorios.FindAsync(id);
+       if(relatorio is null) return NotFound(new { Mensagem = "Relatório não encontrado."});
+
+       return Ok(relatorio);
+    }
 }
